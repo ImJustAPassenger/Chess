@@ -40,4 +40,9 @@ public class Position
         return !(left == right);
     }
 
+    public static Position operator +(Position pos, Direction dir)
+    {
+        return new Position(pos.Row + dir.RowDelta, pos.Column + dir.ColumnDelta);
+    }
+
 }
