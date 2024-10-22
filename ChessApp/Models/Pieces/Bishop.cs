@@ -10,7 +10,7 @@ public class Bishop : Piece
 
     public override Piece Copy()
     {
-        Bishop copy = new Bishop(color);
+        Bishop copy = new Bishop(Color);
         copy.HasMoved = HasMoved;
         return copy;
     }
