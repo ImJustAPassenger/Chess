@@ -6,13 +6,13 @@
              BackgroundColor="#101010">
   <Grid>
     <ImageButton VerticalOptions="Start"
-        Source="Pause.png"
-        Clicked="Pause_Clicked"
-        HorizontalOptions="Start"
-        WidthRequest="60"
-        Margin="10"
-        BackgroundColor="Transparent"
-        HeightRequest="60">
+                 Source="Pause.png"
+                 Clicked="Pause_Clicked"
+                 HorizontalOptions="Start"
+                 WidthRequest="60"
+                 Margin="10"
+                 BackgroundColor="Transparent"
+                 HeightRequest="60">
       <ImageButton.Behaviors>
         <toolkit:IconTintColorBehavior TintColor="White"/>
       </ImageButton.Behaviors>
@@ -35,8 +35,11 @@
         </Grid.GestureRecognizers>
       </Grid>
 
-
-
+<!--       <Grid.GestureRecognizers>
+        <TapGestureRecognizer Tapped="Pause_Clicked"/>
+      </Grid.GestureRecognizers>
+ -->
     </Grid>
   </Grid>
+
 </ContentPage>
