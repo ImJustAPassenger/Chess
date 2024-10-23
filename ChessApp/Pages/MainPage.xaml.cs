@@ -33,6 +33,7 @@ public partial class MainPage : ContentPage
 		InitializeBoard();
 		gameState = new GameState(Player.White, Board.Initial());
 		DrawBoard(gameState.Board);
+		//SetCursor();
 
 	}
 	private void InitializeBoard()
@@ -93,6 +94,12 @@ public partial class MainPage : ContentPage
 		}
 	}
 
+	/* private void SetCursor()
+	{
+
+		//ChessCursor.SetCursor(gameState.CurrentPlayer==Player.White);
+	} */
+
 	private void BoardGrid_Tapped(object sender, TappedEventArgs e)
 	{
 		var touchPoint = e.GetPosition(BoardGrid);
@@ -126,6 +133,7 @@ public partial class MainPage : ContentPage
 	{
 		gameState.MakeMove(move);
 		DrawBoard(gameState.Board);
+				//SetCursor();
 	}
 
 	private void OnFromPositionSelected(Position pos)
