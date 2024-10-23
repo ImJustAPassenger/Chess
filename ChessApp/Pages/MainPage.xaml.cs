@@ -1,6 +1,8 @@
 ﻿
+using ChessApp.Controls;
 using ChessApp.Logic;
 using ChessApp.Models;
+using CommunityToolkit.Maui.Views;
 using Microsoft.Maui.Controls.Shapes;
 
 namespace ChessApp.Pages;
@@ -29,15 +31,26 @@ public partial class MainPage : ContentPage
 		squareHeight = BoardGrid.Height / 8;
 	}
 	protected override void OnAppearing()
-	{
+	{/* 
 		InitializeBoard();
 		gameState = new GameState(Player.White, Board.Initial());
-		DrawBoard(gameState.Board);
+		DrawBoard(gameState.Board); */
+		StartGame();
 		//SetCursor();
 
 	}
+
+private void StartGame()
+{
+	
+		InitializeBoard();
+		gameState = new GameState(Player.White, Board.Initial());
+		DrawBoard(gameState.Board);
+}
+
 	private void InitializeBoard()
 	{
+		if(PieceGrid!=null)PieceGrid.Clear();
 		for (int r = 0; r < 8; r++)
 		{
 			for (int c = 0; c < 8; c++)
@@ -129,11 +142,19 @@ public partial class MainPage : ContentPage
 		}
 	}
 
-	private void HandleMove(Move move)
+	private async void HandleMove(Move move)
 	{
 		gameState.MakeMove(move);
 		DrawBoard(gameState.Board);
-				//SetCursor();
+
+		if (gameState.IsGameOver())
+		{
+			var showResult = new ResultPopup(gameState.Result);
+			await this.ShowPopupAsync(showResult);
+			StartGame();
+
+		}
+		//SetCursor();
 	}
 
 	private void OnFromPositionSelected(Position pos)
