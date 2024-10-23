@@ -49,6 +49,9 @@ public partial class MainPage : ContentPage
 
 				Rectangle highLight = new Rectangle();
 				highlights[r, c] = highLight;
+
+				Grid.SetRow(highLight, r);  // Imposta la riga
+				Grid.SetColumn(highLight, c);  // Imposta la colonna
 				HighLightGrid.Children.Add(highLight);
 			}
 		}
@@ -92,21 +95,21 @@ public partial class MainPage : ContentPage
 
 	private void BoardGrid_Tapped(object sender, TappedEventArgs e)
 	{
-		 var touchPoint = e.GetPosition(PieceGrid);
-    if (touchPoint.HasValue)
-    {
-		Console.WriteLine($"Touch Point: X={touchPoint.Value.X}, Y={touchPoint.Value.Y}");
-        
-        Position pos = ToSquarePosition(touchPoint.Value);
-        if (selectedPos == null)
-        {
-            OnFromPositionSelected(pos);
-        }
-        else
-        {
-            OnToPositionSelected(pos);
-        }
-    }
+		var touchPoint = e.GetPosition(BoardGrid);
+		if (touchPoint.HasValue)
+		{
+			Console.WriteLine($"Touch Point: X={touchPoint.Value.X}, Y={touchPoint.Value.Y}");
+
+			Position pos = ToSquarePosition(touchPoint.Value);
+			if (selectedPos == null)
+			{
+				OnFromPositionSelected(pos);
+			}
+			else
+			{
+				OnToPositionSelected(pos);
+			}
+		}
 	}
 
 	private void OnToPositionSelected(Position pos)
