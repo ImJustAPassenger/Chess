@@ -198,5 +198,13 @@ public partial class MainPage : ContentPage
 		col = Math.Clamp(col, 0, 7);
 		return new Position(row, col);
 	}
+
+	private async void Pause_Clicked(object sender, EventArgs e)
+	{
+		var pause = new PausePopup();
+		await this.ShowPopupAsync(pause);
+		if (pause.Restart)
+			StartGame();
+	}
 }
 

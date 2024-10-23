@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+               CanBeDismissedByTappingOutsideOfPopup="False"
+               x:Class="ChessApp.Controls.PausePopup">
+    <Border BackgroundColor="#ffa274"
+            StrokeShape="RoundRectangle 10"
+            x:Name="borderResult"
+            Stroke="#260000"
+            HeightRequest="300"
+            WidthRequest="450"
+            Padding="15">
+        <Border.Shadow>
+            <Shadow/>
+        </Border.Shadow>
+
+        <Grid RowDefinitions="Auto,*"
+              RowSpacing="15">
+            <Border Grid.Row="0"
+                    WidthRequest="300"
+                    HeightRequest="70"
+                    StrokeShape="RoundRectangle 10"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    
+                    BackgroundColor="#260000"
+                    Padding="15,10">
+                <Label HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       Text="Game Paused"
+                       TextColor="#ffa274"
+                       FontAttributes="Bold"
+                       FontSize="24"/>
+            </Border>
+            <Grid Grid.Row="1"
+                  x:Name="announceBorder"
+                  BackgroundColor="#ffa274"
+                  RowDefinitions="Auto,Auto,Auto"
+                  ColumnDefinitions="*,Auto"
+                  RowSpacing="0">
+                <Label Grid.Row="0"
+                       Grid.ColumnSpan="2"
+                       HorizontalOptions="Center"
+                       Text="Game Paused"
+                       FontAttributes="Bold"
+                       FontSize="22"/>
+                <Button Grid.Row="2"
+                        Grid.Column="1"
+                        TextColor="#ffa274"
+                        Text="Continue"
+                        FontAttributes="None"
+                        FontSize="21"
+                        HeightRequest="60"
+                        WidthRequest="140"
+                        Margin="0,0,0,10"
+                        BackgroundColor="#260000"
+                        Clicked="Continue_Clicked"/>
+                <Button Grid.Row="2"
+                        Grid.Column="0"
+                        HorizontalOptions="Start"
+                        TextColor="#ffa274"
+                        Text="Restart"
+                        FontAttributes="None"
+                        FontSize="21"
+                        HeightRequest="60"
+                        WidthRequest="150"
+                        Margin="0,0,0,10"
+                        BackgroundColor="#260000"
+                        Clicked="Restart_Clicked"/>
+            </Grid>
+
+        </Grid>
+    </Border>
+
+</toolkit:Popup>

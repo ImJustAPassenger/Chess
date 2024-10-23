@@ -496,3 +496,5 @@ F:\Giuseppe\lavori maui\Chess\ChessApp\obj\Debug\net8.0-windows10.0.19041.0\win1
 F:\Giuseppe\lavori maui\Chess\ChessApp\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\CommunityToolkit.Maui.dll
 F:\Giuseppe\lavori maui\Chess\ChessApp\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\CommunityToolkit.Maui.Core.dll
 F:\Giuseppe\lavori maui\Chess\ChessApp\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\System.Speech.dll
+F:\Giuseppe\lavori maui\Chess\ChessApp\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\pause.scale-100.png
+F:\Giuseppe\lavori maui\Chess\ChessApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\pause.scale-100.png
