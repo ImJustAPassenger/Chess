@@ -3,6 +3,12 @@ namespace ChessApp.Models;
 public class Board
 {
     private readonly Piece[,] pieces = new Piece[8, 8];
+
+    private readonly Dictionary<Player, Position> pawnSkipPositions = new Dictionary<Player, Position>{
+        {Player.White,null},
+        {Player.Black,null}
+    };
+
     public Piece this[int row, int col]
     {
         get { return pieces[row, col]; }
@@ -14,6 +20,18 @@ public class Board
         set { this[pos.Row, pos.Column] = value; }
     }
 
+    public Position GetPawnSkipPosition(Player player)
+    {
+        return pawnSkipPositions[player];
+
+    }
+
+    public void SetPawnSkipPosition(Player player, Position pos)
+    { 
+        pawnSkipPositions[player]=pos;
+    }
+
+
     public static Board Initial()
     {
         Board board = new Board();
@@ -24,7 +42,7 @@ public class Board
     private void AddStartPieces()
     {
         this[0, 0] = new Rook(Player.Black);
-       this[0, 1] = new Knight(Player.Black);
+        this[0, 1] = new Knight(Player.Black);
         this[0, 2] = new Bishop(Player.Black);
         this[0, 3] = new Queen(Player.Black);
         this[0, 4] = new King(Player.Black);
@@ -80,9 +98,10 @@ public class Board
 
     public bool IsInCheck(Player player)
     {
-        return PiecePositionsFor(player.Opponent()).Any(pos=>{
-            Piece piece= this[pos];
-            return piece.CanCaptureOpponentKing(pos,this);  
+        return PiecePositionsFor(player.Opponent()).Any(pos =>
+        {
+            Piece piece = this[pos];
+            return piece.CanCaptureOpponentKing(pos, this);
         });
     }
 
