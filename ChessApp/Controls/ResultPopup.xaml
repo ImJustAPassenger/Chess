@@ -41,9 +41,11 @@
                   ColumnDefinitions="*,Auto"
                   RowSpacing="0">
                 <Label Grid.Row="0"
+                    Grid.ColumnSpan="2"
+                     HorizontalOptions="Center"
                        x:Name="lblRightWrong"
                        FontAttributes="Bold"
-                       FontSize="20"/>
+                       FontSize="22"/>
                 <Image Grid.Column="1"
                        VerticalOptions="Start"
                        HorizontalOptions="End"

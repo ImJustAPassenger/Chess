@@ -40,17 +40,17 @@ public partial class MainPage : ContentPage
 
 	}
 
-private void StartGame()
-{
-	
+	private void StartGame()
+	{
+
 		InitializeBoard();
 		gameState = new GameState(Player.White, Board.Initial());
 		DrawBoard(gameState.Board);
-}
+	}
 
 	private void InitializeBoard()
 	{
-		if(PieceGrid!=null)PieceGrid.Clear();
+		if (PieceGrid != null) PieceGrid.Clear();
 		for (int r = 0; r < 8; r++)
 		{
 			for (int c = 0; c < 8; c++)
@@ -138,8 +138,28 @@ private void StartGame()
 		HideHighLights();
 		if (moveCache.TryGetValue(pos, out Move move))
 		{
-			HandleMove(move);
+			if (move.Type == MoveType.PawnPromotion)
+			{
+				HandlePromotion(move.FromPos, move.ToPos);
+			}
+			else
+			{
+				HandleMove(move);
+			}
 		}
+	}
+
+	private async void HandlePromotion(Position fromPos, Position toPos)
+	{
+		pieceImages[toPos.Row, toPos.Column].Source = Images.GetImage(gameState.CurrentPlayer, PieceType.Pawn);
+		pieceImages[toPos.Row, toPos.Column].Source = null;
+		var promPage = new PromotionPage(gameState.CurrentPlayer);
+		await this.ShowPopupAsync(promPage);
+		var piecePicked = new PieceType();
+		piecePicked = promPage.piece;
+		Move promMove = new PawnPromotion(fromPos, toPos, piecePicked);
+		HandleMove(promMove);
+
 	}
 
 	private async void HandleMove(Move move)

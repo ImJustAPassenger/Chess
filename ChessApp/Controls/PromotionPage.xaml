@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+               xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               x:Class="ChessApp.Controls.PromotionPage"
+               CanBeDismissedByTappingOutsideOfPopup="False">
+    <Border WidthRequest="800"
+            Stroke="#260000"
+            BackgroundColor="#FFF59E58"
+            StrokeShape="RoundRectangle 10"
+            HeightRequest="450">
+        <Border.Shadow>
+            <Shadow/>
+        </Border.Shadow>
+        <Border WidthRequest="275"
+                HeightRequest="125"
+                StrokeShape="RoundRectangle 10"
+                BackgroundColor="#260000"
+                VerticalOptions="Center"
+                HorizontalOptions="Center">
+            <Grid RowDefinitions="*,1.5*">
+                <Label Grid.Row="0"
+                       FontAttributes="Bold"
+                       FontSize="20"
+                       Text="SELECT A PIECE"
+                       TextColor="#FFF59E58"/>
+                <Grid Grid.Row="1"
+                      ColumnDefinitions="*,*,*,*">
+                    <Image Source="queen_w.png"
+                           x:Name="QueenImg"
+                           Grid.Column="0">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Queen_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Image Source="bishop_w.png"
+                           x:Name="BishopImg"
+                           Grid.Column="1">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Bishop_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Image Source="rook_w.png"
+                           x:Name="RookImg"
+                           Grid.Column="2">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Rook_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Image Source="knight_w.png"
+                           x:Name="KnightImg"
+                           Grid.Column="3">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Knight_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Grid>
+            </Grid>
+        </Border>
+    </Border>
+</toolkit:Popup>
