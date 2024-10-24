@@ -24,6 +24,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = ChessApp.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
+[f:/Giuseppe/lavori maui/Chess/ChessApp/Controls/PausePopup.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ChessApp.Controls.PausePopup.xaml
+build_metadata.AdditionalFiles.TargetPath = Controls\PausePopup.xaml
+build_metadata.AdditionalFiles.RelativePath = Controls\PausePopup.xaml
+
 [f:/Giuseppe/lavori maui/Chess/ChessApp/Controls/PromotionPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = ChessApp.Controls.PromotionPage.xaml

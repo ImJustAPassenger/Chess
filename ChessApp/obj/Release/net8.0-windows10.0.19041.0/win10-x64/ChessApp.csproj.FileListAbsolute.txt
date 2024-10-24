@@ -496,3 +496,5 @@ f:\Giuseppe\lavori maui\Chess\ChessApp\obj\Release\net8.0-windows10.0.19041.0\wi
 f:\Giuseppe\lavori maui\Chess\ChessApp\obj\Release\net8.0-windows10.0.19041.0\win10-x64\qualifiers.txt
 f:\Giuseppe\lavori maui\Chess\ChessApp\obj\Release\net8.0-windows10.0.19041.0\win10-x64\qualifiers.txt.intermediate
 f:\Giuseppe\lavori maui\Chess\ChessApp\obj\Release\net8.0-windows10.0.19041.0\win10-x64\MultipleQualifiersPerDimensionFound.txt
+f:\Giuseppe\lavori maui\Chess\ChessApp\bin\Release\net8.0-windows10.0.19041.0\win10-x64\pause.scale-100.png
+f:\Giuseppe\lavori maui\Chess\ChessApp\obj\Release\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\pause.scale-100.png
