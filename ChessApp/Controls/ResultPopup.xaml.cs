@@ -9,9 +9,41 @@ public partial class ResultPopup : Popup
 	public ResultPopup(Result result)
 	{
 		InitializeComponent();
-
+		var reason="";
+		switch (result.Reason)
+		{
+			case EndReason.Checkmate:
+			{
+				reason="CHECKMATE";
+				break;
+			}
+			case EndReason.FiftyMoveRule:
+			{
+				reason="FIFTY-MOVE RULE";
+				break;
+			}
+			case EndReason.InsufficientMaterial:
+			{
+				reason="INSUFFICIENT MATERIAL";
+				break;
+			}
+			case EndReason.Stalemate:
+			{
+				reason="STALEMATE";
+				break;
+			}
+			case EndReason.ThreefoldRepetition:
+			{
+				reason="THREEFOLD REPETITION";
+				break;
+			}
+			default:
+			{
+				break;
+			}
+		}
 		headerResult.Text = $"{result.Winner}";
-		lblRightWrong.Text = $"{result.Reason}";
+		lblRightWrong.Text = $"{reason}";
 
 
 	}
